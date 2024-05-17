@@ -8,17 +8,17 @@ package it.unipd.mtss;
 public class IntegerToRoman {
 
     // Array di valori interi corrispondenti ai simboli romani
-    private static final int[] values = {5, 4, 1};
+    private static final int[] values = {10, 9, 5, 4, 1};
 
     // Array di simboli romani corrispondenti ai valori interi
-    private static final String[] symbols = {"V", "IV", "I"};
+    private static final String[] symbols = {"X", "IX", "V", "IV", "I"};
 
-    // Converte i numeri interi nel range [1,6] in numeri romani
+    // Converte i numeri interi nel range [1,10] in numeri romani
     public static String convert(int number){
 
-        // Controlla se il numero è fuori dal range [1,6]
-        if (number<1 || number>6) {
-            throw new IllegalArgumentException(number + " is not in range [1,6]");
+        // Controlla se il numero è fuori dal range [1,10]
+        if (number<1 || number>10) {
+            throw new IllegalArgumentException(number + " is not in range [1,10]");
         }
 
         // Variabile per memorizzare il risultato della conversione
