@@ -7,4 +7,4 @@ CODE COVERAGE using Jacoco and Coveralls
 [![Coverage Status](https://coveralls.io/repos/github/saraferraro18/ASSIGNMENT2/badge.svg?branch=develop)](https://coveralls.io/github/saraferraro18/ASSIGNMENT2?branch=develop)
 
 LATEST BUILD STATUS
-[![Java CI with Maven](https://github.com/saraferraro18/ASSIGNMENT2/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/saraferraro18/ASSIGNMENT2/actions/workflows/main.yml)
+[![Java CI with Maven](https://github.com/saraferraro18/ASSIGNMENT2/actions/workflows/CI-maven-coveralls.yml/badge.svg?branch=develop)](https://github.com/saraferraro18/ASSIGNMENT2/actions/workflows/CI-maven-coveralls.yml)
