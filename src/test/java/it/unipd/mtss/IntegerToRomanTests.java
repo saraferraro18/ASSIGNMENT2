@@ -5,19 +5,64 @@
 
 package it.unipd.mtss;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
-//Unit test per IntegerToRoman
-
+// Utilizza il runner parametrizzato di JUnit per eseguire test con diverse combinazioni di parametri
+@RunWith(Parameterized.class)
 public class IntegerToRomanTests {
 
-    //TODO
+    // Variabili di istanza per l'input e l'output attesi
+    private String input;
+    private String expectedOutput;
 
+    // Costruttore che inizializza le variabili di istanza con i valori dei parametri
+    public IntegerToRomanTests(String input, String expectedOutput) {
+        this.input = input;
+        this.expectedOutput = expectedOutput;
+    }
+
+    // Metodo che fornisce i dati di test come una collezione di array di stringhe
+    @Parameters
+    public static Collection<String[]> testConditions() {
+
+        // Array bidimensionale con i valori di input e gli output attesi
+        String[][] expectedOutputs = {
+                { "1", "I" },
+                { "2", "II" },
+                { "3", "III" }};
+
+        // Ritorna come lista
+        return Arrays.asList(expectedOutputs);
+    }
+
+    // Test parametrizzato per verificare la conversione dei numeri in numeri romani
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void testConvertNumbers() {
+        assertEquals(expectedOutput,
+                IntegerToRoman.convert(Integer.parseInt(input)));
+    }
+
+    // Test che si aspetta un'eccezione IllegalArgumentException per un valore
+    // di input troppo basso (minore di 1)
+    @Test(expected=IllegalArgumentException.class)
+    public void TestExeption_IllegalMinArgument() {
+        int number = 0;
+        String expected = IntegerToRoman.convert(number);
+    }
+
+    // Test che si aspetta un'eccezione IllegalArgumentException per un valore
+    // di input troppo alto (maggiore di 3)
+    @Test(expected=IllegalArgumentException.class)
+    public void TestExeption_IllegalMaxArgument() {
+        int number = 4;
+        String expected = IntegerToRoman.convert(number);
     }
 }
