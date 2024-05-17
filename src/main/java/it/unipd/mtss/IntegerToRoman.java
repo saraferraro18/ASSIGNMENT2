@@ -13,12 +13,12 @@ public class IntegerToRoman {
     // Array di simboli romani corrispondenti ai valori interi
     private static final String[] symbols = {"X", "IX", "V", "IV", "I"};
 
-    // Converte i numeri interi nel range [1,10] in numeri romani
+    // Converte i numeri interi nel range [1,20] in numeri romani
     public static String convert(int number){
 
-        // Controlla se il numero è fuori dal range [1,10]
-        if (number<1 || number>10) {
-            throw new IllegalArgumentException(number + " is not in range [1,10]");
+        // Controlla se il numero è fuori dal range [1,20]
+        if (number<1 || number>20) {
+            throw new IllegalArgumentException(number + " is not in range [1,20]");
         }
 
         // Variabile per memorizzare il risultato della conversione

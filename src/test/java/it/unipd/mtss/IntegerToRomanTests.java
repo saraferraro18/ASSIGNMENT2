@@ -44,7 +44,17 @@ public class IntegerToRomanTests {
                 { "7", "VII" },
                 { "8", "VIII" },
                 { "9", "IX" },
-                { "10", "X" }};
+                { "10", "X" },
+                { "11", "XI" },
+                { "12", "XII" },
+                { "13", "XIII" },
+                { "14", "XIV" },
+                { "15", "XV" },
+                { "16", "XVI" },
+                { "17", "XVII" },
+                { "18", "XVIII" },
+                { "19", "XIX" },
+                { "20", "XX" }};
 
         // Ritorna come lista
         return Arrays.asList(expectedOutputs);
@@ -66,10 +76,10 @@ public class IntegerToRomanTests {
     }
 
     // Test che si aspetta un'eccezione IllegalArgumentException per un valore
-    // di input troppo alto (maggiore di 10)
+    // di input troppo alto (maggiore di 20)
     @Test(expected=IllegalArgumentException.class)
     public void TestExeption_IllegalMaxArgument() {
-        int number = 11;
+        int number = 21;
         String expected = IntegerToRoman.convert(number);
     }
 }
