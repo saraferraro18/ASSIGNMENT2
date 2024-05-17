@@ -8,17 +8,18 @@ package it.unipd.mtss;
 public class IntegerToRoman {
 
     // Array di valori interi corrispondenti ai simboli romani
-    private static final int[] values = {50, 40, 10, 9, 5, 4, 1};
+    private static final int[] values = {100, 90, 50, 40, 10, 9, 5, 4, 1};
 
     // Array di simboli romani corrispondenti ai valori interi
-    private static final String[] symbols = {"L", "XL", "X", "IX", "V", "IV", "I"};
+    private static final String[] symbols = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
 
-    // Converte i numeri interi nel range [1,50] in numeri romani
+
+    // Converte i numeri interi nel range [1,100] in numeri romani
     public static String convert(int number){
 
-        // Controlla se il numero è fuori dal range [1,50]
-        if (number<1 || number>50) {
-            throw new IllegalArgumentException(number + " is not in range [1,50]");
+        // Controlla se il numero è fuori dal range [1,100]
+        if (number<1 || number>100) {
+            throw new IllegalArgumentException(number + " is not in range [1,100]");
         }
 
         // Variabile per memorizzare il risultato della conversione
