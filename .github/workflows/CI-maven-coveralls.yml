@@ -1,0 +1,30 @@
+name: Java CI with Maven and Coveralls
+
+# Esegue il workflow su ogni push
+on: [push]
+
+jobs:
+  build:
+    # Utilizza l'ultima versione di Ubuntu come ambiente di esecuzione
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step per clonare il repository
+    - uses: actions/checkout@v3
+    
+    # Step per impostare JDK 11 usando il setup-java action
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'         # Specifica la versione di Java da usare
+        distribution: 'temurin'     # Specifica la distribuzione del JDK
+        java-package: jdk          # Specifica il tipo di pacchetto Java
+        cache: maven               # Abilita la cache di Maven
+        
+    # Step per costruire il progetto usando Maven
+    - name: Build with Maven
+      run: mvn -B install --file pom.xml   # Costruisce il progetto e installa le dipendenze specificate nel file pom.xml
+            
+    # Step per eseguire il report di Coveralls usando Maven
+    - name: Coveralls
+      run: mvn -B coveralls:report --define repoToken=${{ secrets.COVERALLS_REPO_TOKEN }}  # Esegue il plugin Coveralls per generare il report di copertura
