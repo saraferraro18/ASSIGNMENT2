@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+    <!-- Modulo per l'analisi della struttura del codice -->
+    <module name="TreeWalker">
+        <!-- Modulo per la complessità delle espressioni booleane -->
+        <module name="BooleanExpressionComplexity"/>
+        <!-- Modulo per la complessità dei cicli -->
+        <module name="CyclomaticComplexity">
+            <!-- Impostazione della complessità dei cicli massima -->
+            <property name="max" value="80"/>
+        </module>
+        <!-- Modulo per la lunghezza dei metodi -->
+        <module name="MethodLength">
+            <!-- Impostazione della lunghezza massima dei metodi -->
+            <property name="max" value="100"/>
+        </module>
+        <!-- Modulo per i blocchi catch vuoti -->
+        <module name="EmptyCatchBlock"/>
+        <!-- Modulo per evitare gli import di pacchetti con asterisco -->
+        <module name="AvoidStarImport"/>
+        <!-- Modulo per gli import illegali -->
+        <module name="IllegalImport"/>
+        <!-- Modulo per le parentesi nei costrutti -->
+        <module name="NeedBraces"/>
+    </module>
+    <!-- Modulo per la lunghezza dei file -->
+    <module name="FileLength">
+        <!-- Impostazione della lunghezza massima dei file -->
+        <property name="max" value="1500"/>
+    </module>
+    <!-- Modulo per la lunghezza delle righe -->
+    <module name="LineLength">
+        <!-- Impostazione della lunghezza massima delle righe -->
+        <property name="max" value="120"/>
+    </module>
+    <!-- Modulo per i caratteri di tabulazione nei file -->
+    <module name="FileTabCharacter"/>
+    <!-- Modulo per l'intestazione dei file -->
+    <module name="Header">
+        <!-- Impostazione del file di intestazione -->
+        <property name="headerFile" value="${checkstyle.header.file}"/>
+    </module>
+</module>
+
